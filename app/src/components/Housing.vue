@@ -1,9 +1,9 @@
 <template lang="html">
     <div class="housing">
         <form>
-            <span>
+            <h2>
                 Nature du logement
-            </span>
+            </h2>
 
             <br>
 

@@ -5,6 +5,7 @@ import About from "@/views/About"
 import Start from "@/views/Start"
 import Result from "@/views/Result"
 import Map from "@/views/Map"
+import Legal from "@/views/Legal"
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ let router = new Router({
             path      : '/carte-des-artisans',
             name      : 'map',
             component : Map
+        },
+        {
+            path      : '/conditions-legales',
+            name      : 'legal',
+            component : Legal
         },
         {
             path      : '/about',

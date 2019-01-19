@@ -34,6 +34,7 @@
 
         methods : {
             click () {
+                document.querySelector('.next-step button').blur()
                 if (this.content) {
                     this.$emit('click')
                 } else {

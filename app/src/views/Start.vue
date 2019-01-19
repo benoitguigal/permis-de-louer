@@ -13,9 +13,6 @@
             </div>
             <div class="center-part">
                 <div class="wrapper">
-                    <h2>
-                        Votre logement
-                    </h2>
                     <InformationStepper v-on:change-component="scroll()"></InformationStepper>
                 </div>
             </div>
