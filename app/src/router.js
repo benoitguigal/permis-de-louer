@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import About from "@/views/About"
 import Start from "@/views/Start"
+import Result from "@/views/Result"
 
 Vue.use(Router)
 
@@ -20,6 +21,11 @@ let router = new Router({
             path      : '/commencez',
             name      : 'start',
             component : Start
+        },
+        {
+            path      : '/resultat',
+            name      : 'result',
+            component : Result
         },
         // {
         //     path      : '/sign-in',

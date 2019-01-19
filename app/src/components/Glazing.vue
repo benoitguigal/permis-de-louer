@@ -38,12 +38,17 @@
 
 <script>
     import NextStep from '@/components/NextStep'
-
+    import GlazingReminder from '@/components/reminders/GlazingReminder.vue'
+    import ReminderStore from '@/store/ReminderStore'
 
     export default {
         name : 'glazing',
 
-        components : {NextStep}
+        components : {NextStep},
+
+        mounted () {
+            // ReminderStore.dispatch('changeReminder', GlazingReminder)
+        }
     }
 </script>
 

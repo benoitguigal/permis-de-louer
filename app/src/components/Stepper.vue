@@ -2,20 +2,29 @@
     <div class="stepper">
         <i v-for="(index) in range" class="far fa-circle"
            v-bind:data-number="index"
-           v-bind:class="{'is--active' : index === current}"
+           v-bind:class="{'is--active' : index === step}"
         ></i>
         <div class="line"></div>
     </div>
 </template>
 
 <script>
+    import WizardStore from '@/store/WizardStore'
+
     export default {
         name : 'stepper',
 
+        store : WizardStore,
+
+        computed : {
+            step () {
+                return this.$store.state.currentTab + 1
+            }
+        },
+
         data () {
             return {
-                range   : [1, 2, 3, 4, 5, 6, 7, 8],
-                current : 1
+                range   : [1, 2, 3, 4, 5, 6, 7, 8]
             }
         }
     }

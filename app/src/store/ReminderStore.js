@@ -1,18 +1,27 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import AreaSizeReminder from '@/components/reminders/AreaSizeReminder.vue'
+import GlazingReminder from '@/components/reminders/GlazingReminder.vue'
 
 Vue.use(Vuex)
 
+const reminders = [
+    null, GlazingReminder, AreaSizeReminder,
+]
+
 const ReminderStore = new Vuex.Store({
     state : {
-        currentTabComponent : null
+        currentReminder : null
     },
 
     mutations : {},
 
     actions : {
-        changeReminder (ctx, reminder) {
-            this.state.currentTabComponent = reminder
+        nexStep (ctx, step) {
+            this.state.currentReminder = reminders[step]
+        },
+        reset (ctx) {
+            this.state.currentReminder = null
         }
     }
 });

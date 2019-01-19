@@ -9,9 +9,7 @@
                 <h2>
                     Vos informations
                 </h2>
-                <img src="../assets/glazing.svg">
-                <p>Un garde-corps est obligatoire aux escaliers ainsi, qu'aux fênetres à plus de 80cm du sol. </p>
-                <component v-bind:is="currentTabComponent"></component>
+                <component v-bind:is="currentReminder"></component>
             </div>
             <div class="center-part">
                 <div class="wrapper">
@@ -32,6 +30,7 @@
     import InformationStepper from '@/components/InformationStepper'
     import Stepper from '@/components/Stepper'
     import ReminderStore from '@/store/ReminderStore'
+    import WizardStore from '@/store/WizardStore'
 
     export default {
         name : 'start',
@@ -43,11 +42,14 @@
         mounted () {
             document.body.scrollTop            = 0
             document.documentElement.scrollTop = 0
+
+            WizardStore.dispatch('reset')
+            ReminderStore.dispatch('reset')
         },
 
         computed : {
-            currentTabComponent () {
-                return this.$store.state.currentTabComponent
+            currentReminder () {
+                return this.$store.state.currentReminder
             }
         }
     }
@@ -72,14 +74,6 @@
 
             .left-part {
                 @include flexPart();
-
-                img{
-                    width: 100px;
-                    margin-left:1em;
-                    }
-                p{
-                    margin:2em;
-                }
 
                 background: #ddd;
                 flex: 1;

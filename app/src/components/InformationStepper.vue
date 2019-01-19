@@ -1,26 +1,28 @@
 <template lang="html">
     <div class="information-stepper">
-        <Housing></Housing>
-        <Glazing></Glazing>
-        <AreaSize></AreaSize>
+        <component v-bind:is="currentStepComponent"></component>
     </div>
 </template>
 
 <script>
-    import Glazing from '@/components/Glazing.vue'
-    import AreaSize from '@/components/AreaSize.vue'
-    import Housing from '@/components/Housing.vue'
+    import WizardStore from '@/store/WizardStore'
 
     export default {
         name : 'information-stepper',
 
-        components : {Glazing, AreaSize, Housing}
+        store : WizardStore,
+
+        computed : {
+            currentStepComponent () {
+                return this.$store.state.currentStepComponent
+            }
+        }
     }
 </script>
 
 <style lang="css" scoped>
-    .information-stepper { 
-       
+    .information-stepper {
+
     }
 
 

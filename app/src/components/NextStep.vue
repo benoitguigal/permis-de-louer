@@ -9,12 +9,20 @@
 </template>
 
 <script>
+    import WizardStore from '@/store/WizardStore'
+
     export default {
         name : 'next-step',
 
+        store : WizardStore,
+
         methods : {
             click () {
-                this.$emit('click')
+                this.$store.dispatch('nextStep').then(() => {
+
+                }).catch(() => {
+                    this.$router.push({'name' : 'result'})
+                })
             }
         }
     }
@@ -30,6 +38,7 @@
         i {
             font-size: 40px;
             margin-top: 30px;
+
             &:hover {
                 cursor: pointer;
             }

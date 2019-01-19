@@ -39,7 +39,7 @@
         </form>
 
         <div class="next">
-            <NextStep v-on:click="nextStep()"></NextStep>
+            <NextStep></NextStep>
         </div>
     </div>
 </template>
@@ -61,12 +61,6 @@
                 }
             }
         },
-
-        methods : {
-            nextStep () {
-                alert('nextStep')
-            }
-        }
     }
 </script>
 

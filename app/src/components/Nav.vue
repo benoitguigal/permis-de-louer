@@ -2,13 +2,8 @@
     <div class="nav">
         <router-link to="/" class="nav-brand">
             <img src="../assets/logo.svg" alt="logo">
-            Permis de louer
+            Propriétaire responsable
         </router-link>
-
-        <!--<router-link to="/" class="home">-->
-            <!--<i class="fas fa-home"></i> Accueil-->
-        <!--</router-link>-->
-
 
         <router-link to="/about">About</router-link>
     </div>
