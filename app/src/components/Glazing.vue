@@ -1,19 +1,24 @@
 <template lang="html">
     <div class="glazing">
-        <h1>
+        <h2>
             Fenetres
-        </h1>
+        </h2>
+        <NextStep></NextStep>
     </div>
 </template>
 
 <script>
+    import NextStep from '@/components/NextStep'
+
     export default {
-        name : 'glazing'
+        name : 'glazing',
+
+        components : {NextStep}
     }
 </script>
 
 <style lang="scss" scoped>
     .glazing {
-
+        min-height: 775px;
     }
 </style>
