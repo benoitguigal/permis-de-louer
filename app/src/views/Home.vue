@@ -4,6 +4,15 @@
             <div id="slide">
 
             </div>
+            <h1>
+                Auto-diagnotic et mise en relation
+                <br>
+                avec des professionnel
+            </h1>
+            <br>
+            <button v-on:click="start()" class="is--default is--large">
+                Commencez
+            </button>
         </div>
     </div>
 </template>
@@ -29,6 +38,10 @@
         },
 
         methods : {
+            start () {
+                this.$router.push({name : 'start'})
+            },
+
             appendImageOnLoad (link) {
                 return new Promise((resolve) => {
                     let img = new Image()
@@ -92,8 +105,8 @@
         }
 
         h1 {
-            margin: 0;
-            padding: 0;
+            text-align: center;
+            padding-top: 30px;
         }
 
         .slide-container {

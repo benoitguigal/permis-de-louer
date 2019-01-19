@@ -9,12 +9,6 @@
             <!--<i class="fas fa-home"></i> Accueil-->
         <!--</router-link>-->
 
-        <router-link to="/sign-in">
-            Connexion
-        </router-link>
-        <router-link to="/sign-up">
-            Inscription
-        </router-link>
 
         <router-link to="/about">About</router-link>
     </div>

@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Signin from "@/views/Signin"
 import Signup from "@/views/Signup"
 import About from "@/views/About"
+import Start from "@/views/Start"
 
 Vue.use(Router)
 
@@ -17,15 +18,20 @@ export default new Router({
             component : Home
         },
         {
-            path      : '/sign-in',
-            name      : 'sign-in',
-            component : Signin
+            path      : '/commencez',
+            name      : 'start',
+            component : Start
         },
-        {
-            path      : '/sign-up',
-            name      : 'sign-up',
-            component : Signup
-        },
+        // {
+        //     path      : '/sign-in',
+        //     name      : 'sign-in',
+        //     component : Signin
+        // },
+        // {
+        //     path      : '/sign-up',
+        //     name      : 'sign-up',
+        //     component : Signup
+        // },
         {
             path      : '/about',
             name      : 'about',

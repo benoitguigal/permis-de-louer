@@ -1,0 +1,59 @@
+<template lang="html">
+    <div class="start">
+        <h1>
+            Le diagnotic
+        </h1>
+
+        <div class="content">
+            <div class="left-part">
+                <h2>
+                    Vos informations
+                </h2>
+            </div>
+            <div class="right-part">
+                <h2>
+                    Votre logement
+                </h2>
+                <InformationStepper></InformationStepper>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import InformationStepper from '@/components/InformationStepper'
+
+    export default {
+        name : 'start',
+
+        components : {InformationStepper}
+    }
+</script>
+
+<style lang="scss" scoped>
+    @mixin flexPart () {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .start {
+        .content {
+            display: flex;
+
+            .left-part {
+                @include flexPart();
+
+                background: #ddd;
+                flex: 1;
+            }
+
+            .right-part {
+                @include flexPart();
+
+                background: #eeeeee;
+                flex: 2;
+            }
+        }
+    }
+</style>
