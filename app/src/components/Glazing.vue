@@ -30,39 +30,19 @@
         <button class="is--default">
             Non
         </button>
-        <div class="next">
-            <NextStep></NextStep>
-        </div>
     </div>
 </template>
 
 <script>
-    import NextStep from '@/components/NextStep'
-    import GlazingReminder from '@/components/reminders/GlazingReminder.vue'
-    import ReminderStore from '@/store/ReminderStore'
-
     export default {
         name : 'glazing',
-
-        components : {NextStep},
-
-        mounted () {
-            // ReminderStore.dispatch('changeReminder', GlazingReminder)
-        }
     }
 </script>
 
 <style lang="scss" scoped>
     .glazing {
-        min-height: 775px;
+        min-height: 600px;
         background-color: #13CE66;
         padding-left: 5%;
-
-        .next {
-            text-align: center;
-        }
-
     }
-
-
 </style>

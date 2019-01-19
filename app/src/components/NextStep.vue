@@ -37,7 +37,7 @@
 
         i {
             font-size: 40px;
-            margin-top: 30px;
+            margin-top: 10px;
 
             &:hover {
                 cursor: pointer;

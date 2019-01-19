@@ -37,21 +37,16 @@
                 ></vue-slider>
             </div>
         </form>
-
-        <div class="next">
-            <NextStep></NextStep>
-        </div>
     </div>
 </template>
 
 <script>
     import vueSlider from 'vue-slider-component'
-    import NextStep from '@/components/NextStep.vue'
 
     export default {
         name : 'housing',
 
-        components : {vueSlider, NextStep},
+        components : {vueSlider},
 
         data () {
             return {
@@ -68,11 +63,6 @@
     .housing {
         min-height: 530px;
         position: relative;
-
-        .next {
-            margin-top: 100px;
-            text-align: center;
-        }
 
         form {
             padding-left: 80px;

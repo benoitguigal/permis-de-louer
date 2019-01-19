@@ -16,7 +16,7 @@
                     <h2>
                         Votre logement
                     </h2>
-                    <InformationStepper></InformationStepper>
+                    <InformationStepper v-on:change-component="scroll()"></InformationStepper>
                 </div>
             </div>
             <div class="right-part">
@@ -45,6 +45,12 @@
 
             WizardStore.dispatch('reset')
             ReminderStore.dispatch('reset')
+        },
+
+        methods : {
+            scroll () {
+                document.getElementsByClassName('center-part')[0].scrollTop = 0
+            }
         },
 
         computed : {
