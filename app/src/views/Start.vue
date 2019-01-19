@@ -81,7 +81,7 @@
             .left-part {
                 @include flexPart();
 
-                background: #ddd;
+                background: #f6f6f6;
                 flex: 1;
                 overflow: hidden;
             }
@@ -89,7 +89,7 @@
             .center-part {
                 @include flexPart();
 
-                background: #eeeeee;
+                /*background: #eeeeee;*/
                 flex: 2;
                 height: 98%;
                 overflow: scroll;

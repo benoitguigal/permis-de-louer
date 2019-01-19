@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import About from "@/views/About"
 import Start from "@/views/Start"
 import Result from "@/views/Result"
+import Map from "@/views/Map"
 
 Vue.use(Router)
 
@@ -27,16 +28,11 @@ let router = new Router({
             name      : 'result',
             component : Result
         },
-        // {
-        //     path      : '/sign-in',
-        //     name      : 'sign-in',
-        //     component : Signin
-        // },
-        // {
-        //     path      : '/sign-up',
-        //     name      : 'sign-up',
-        //     component : Signup
-        // },
+        {
+            path      : '/carte-des-artisans',
+            name      : 'map',
+            component : Map
+        },
         {
             path      : '/about',
             name      : 'about',

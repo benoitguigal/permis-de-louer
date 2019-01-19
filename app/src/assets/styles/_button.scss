@@ -14,8 +14,6 @@ button {
         padding: 0;
         font-size: 26px;
         font-weight: 700;
-
-
     }
 
     &.is--normal {
@@ -24,9 +22,17 @@ button {
         line-height: 46px;
     }
 
+    &.is--small {
+        padding: 7px !important;
+    }
+
     &.is--primary {
         background-color: rgba(255, 255, 255, 0);
         border: 2px solid #47525E;
+
+        &:hover {
+            background: #f4f4f4;
+        }
     }
 
     &.is--default {

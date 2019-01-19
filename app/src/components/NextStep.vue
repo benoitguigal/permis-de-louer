@@ -1,10 +1,10 @@
 <template lang="html">
     <div class="next-step">
         <button class="is--primary is--normal" v-on:click="click()">
-            Étape suivant
+            {{ label }}
         </button>
         <br>
-        <i class="fas fa-angle-down" v-on:click="click()"></i>
+        <i class="fas fa-angle-down" v-on:click="click()" v-if="showArrow"></i>
     </div>
 </template>
 
@@ -16,13 +16,33 @@
 
         store : WizardStore,
 
+        data () {
+            return {
+                label : 'Étape suivant',
+                showArrow : true
+            }
+        },
+
+        props : ["content"],
+
+        mounted () {
+            if (this.content) {
+                this.label = this.content
+                this.showArrow = false
+            }
+        },
+
         methods : {
             click () {
-                this.$store.dispatch('nextStep').then(() => {
+                if (this.content) {
+                    this.$emit('click')
+                } else {
+                    this.$store.dispatch('nextStep').then(() => {
 
-                }).catch(() => {
-                    this.$router.push({'name' : 'result'})
-                })
+                    }).catch(() => {
+                        this.$router.push({'name' : 'result'})
+                    })
+                }
             }
         }
     }

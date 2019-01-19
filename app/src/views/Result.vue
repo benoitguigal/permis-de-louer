@@ -6,26 +6,34 @@
                 <span>{{ score }}%</span>
             </div>
             <div class="result__details">
-                <h2>
-                    Éléments critiques
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    <br>
-                    Sed tincidunt congue ligula in rutrum. Morbi nec lacus
-                    <br>
-                    condimentum, hendrerit mi eu, feugiat.
-                </p>
-                <h2>
-                    Optionnels
-                </h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    <br>
-                    Sed tincidunt congue ligula in rutrum. Morbi nec lacus
-                    <br>
-                    condimentum, hendrerit mi eu, feugiat.
-                </p>
+                <div>
+                    <h2>
+                        Éléments critiques
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <br>
+                        Sed tincidunt congue ligula in rutrum. Morbi nec lacus
+                        <br>
+                        condimentum, hendrerit mi eu, feugiat.
+                    </p>
+                </div>
+                <div>
+                    <h2>
+                        Optionnels
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        <br>
+                        Sed tincidunt congue ligula in rutrum. Morbi nec lacus
+                        <br>
+                        condimentum, hendrerit mi eu, feugiat.
+                    </p>
+
+                    <div class="next">
+                        <NextStep :content="'Carte des artisans'" v-on:click="showMap()"></NextStep>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="right-part">
@@ -39,12 +47,22 @@
 </template>
 
 <script>
+    import NextStep from '@/components/NextStep.vue'
+
     export default {
         name : 'result',
+
+        components : {NextStep},
 
         data () {
             return {
                 score : 40
+            }
+        },
+
+        methods : {
+            showMap () {
+                this.$router.push({name : 'map'})
             }
         }
     }
@@ -82,6 +100,19 @@
         }
 
         &__details {
+            width: 100%;
+
+            & > div {
+                position: relative;
+
+                .next {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    margin-top: 0;
+                }
+            }
+
             p:first-of-type {
                 margin-bottom: 140px;
             }
@@ -93,7 +124,7 @@
                 width: 60px;
                 height: 60px;
                 line-height: 60px;
-                border : none;
+                border: none;
                 margin-top: 8px;
             }
         }
