@@ -24,8 +24,8 @@
     .next-step {
         text-align: center;
         display: inline-block;
-        bottom: 0;
-        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
 
         i {
             font-size: 40px;

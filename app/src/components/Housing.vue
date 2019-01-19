@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="housing">
-        <form v-on:submit.prevent="">
+        <form>
             <span>
                 Nature du logement
             </span>
@@ -13,7 +13,7 @@
                            v-model="housing.type"
                            id="housing-type-1"
                     />
-                    Apparement
+                    Appartement
                 </label>
                 <label for="housing-type-2">
                     <input type="radio" value="maison"
@@ -36,22 +36,22 @@
                             tooltip-dir="bottom"
                 ></vue-slider>
             </div>
-
-            <div class="next">
-                <NextStep v-on:click="nextStep()"></NextStep>
-            </div>
         </form>
+
+        <div class="next">
+            <NextStep v-on:click="nextStep()"></NextStep>
+        </div>
     </div>
 </template>
 
 <script>
     import vueSlider from 'vue-slider-component'
-    import NextStep from '@/components/NextStep'
+    import NextStep from '@/components/NextStep.vue'
 
     export default {
         name : 'housing',
 
-        components : {vueSlider,NextStep},
+        components : {vueSlider, NextStep},
 
         data () {
             return {
@@ -64,7 +64,7 @@
 
         methods : {
             nextStep () {
-                alert ('nextStep')
+                alert('nextStep')
             }
         }
     }
@@ -72,14 +72,16 @@
 
 <style lang="scss" scoped>
     .housing {
-        padding-left: 80px;
         min-height: 530px;
         position: relative;
 
-        .next-step {
-            position: relative;
-            left: -80px;
+        .next {
             margin-top: 100px;
+            text-align: center;
+        }
+
+        form {
+            padding-left: 80px;
         }
 
         span {
