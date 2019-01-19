@@ -26,7 +26,12 @@
     export default {
         name : 'start',
 
-        components : {InformationStepper}
+        components : {InformationStepper},
+
+        mounted () {
+            document.body.scrollTop            = 0
+            document.documentElement.scrollTop = 0
+        }
     }
 </script>
 
