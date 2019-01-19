@@ -35,6 +35,13 @@
 
         mounted () {
             this.createSlide()
+
+            document.body.scrollTop            = 0
+            document.documentElement.scrollTop = 0
+        },
+
+        destroyed () {
+            clearInterval(this.interval)
         },
 
         methods : {

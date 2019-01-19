@@ -17,6 +17,7 @@
     "animejs": "^3.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "vue-slider-component": "^2.8.6",
     "vue-template-compiler": "^2.5.21"
   }
 }
