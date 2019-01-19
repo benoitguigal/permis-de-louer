@@ -18,8 +18,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .information-stepper {
-
+<style lang="css" scoped>
+    .information-stepper { 
+       
     }
+
+
 </style>

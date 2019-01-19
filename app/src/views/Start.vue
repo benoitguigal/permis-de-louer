@@ -9,7 +9,8 @@
                 <h2>
                     Vos informations
                 </h2>
-
+                <img src="../assets/glazing.svg">
+                <p>Un garde-corps est obligatoire aux escaliers ainsi, qu'aux fênetres à plus de 80cm du sol. </p>
                 <component v-bind:is="currentTabComponent"></component>
             </div>
             <div class="center-part">
@@ -71,6 +72,14 @@
 
             .left-part {
                 @include flexPart();
+
+                img{
+                    width: 100px;
+                    margin-left:1em;
+                    }
+                p{
+                    margin:2em;
+                }
 
                 background: #ddd;
                 flex: 1;

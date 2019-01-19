@@ -1,20 +1,5 @@
 <template lang="html">
     <div class="area">
-        <div class="reminder">
-            <i class="fas fa-plus"></i>
-            <span>
-                Rappel
-            </span>
-            <br>
-            <i class="fas fa-cube"></i>
-            <p>
-                Surface légale <9m2
-                <br>
-                Hauteur de plafond <2,20m
-                <br>
-                Volume <20m3
-            </p>
-        </div>
         <h2>
             Superficie
         </h2>
@@ -24,6 +9,8 @@
 
 <script>
     import NextStep from '@/components/NextStep.vue'
+    import ReminderStore from '@/store/ReminderStore'
+    import AreaSizeReminder from "@/components/reminders/AreaSizeReminder"
 
     export default {
         name : 'area',
@@ -32,7 +19,7 @@
 
         methods : {
             nextStep () {
-
+                ReminderStore.dispatch('changeReminder', AreaSizeReminder)
             }
         }
     }
@@ -48,15 +35,6 @@
             position: relative;
             left: -50px;
             margin-top: 100px;
-        }
-
-        .reminder {
-            left: -320px;
-
-            i.fa-cube {
-                font-size: 35px;
-                margin-top: 10px;
-            }
         }
     }
 </style>
