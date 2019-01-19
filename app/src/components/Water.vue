@@ -31,20 +31,12 @@
                 </select>
             </section>
         </form>
-
-        <div class="next">
-            <NextStep v-on:click="nextStep()"></NextStep>
-        </div>
     </div>
 </template>
 
 <script>
-    import NextStep from '@/components/NextStep.vue'
-
     export default {
         name : 'water',
-
-        components : {NextStep},
 
         data () {
             return {
@@ -53,19 +45,11 @@
                 }
             }
         },
-
-        methods : {
-            nextStep () {
-
-            }
-        }
     }
 </script>
 
 <style lang="scss" scoped>
     .water {
-        min-height: 530px;
-        padding-bottom: 30px;
 
         form {
             padding-left: 80px;
@@ -75,6 +59,7 @@
                     display: block;
                 }
             }
+
             h2 {
                 margin-bottom: 20px;
             }

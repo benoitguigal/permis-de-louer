@@ -61,9 +61,6 @@
 
 <style lang="scss" scoped>
     .housing {
-        min-height: 530px;
-        position: relative;
-
         form {
             padding-left: 80px;
         }

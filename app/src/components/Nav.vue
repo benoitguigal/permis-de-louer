@@ -5,7 +5,9 @@
             Propriétaire responsable
         </router-link>
 
-        <router-link to="/about">About</router-link>
+        <router-link to="/about">
+            À propos
+        </router-link>
     </div>
 </template>
 

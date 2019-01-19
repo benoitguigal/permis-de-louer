@@ -5,44 +5,55 @@
         </h2>
 
         <h3>Le vitrage est :</h3>
-        <button class="is--default">
-            Simple
-        </button>
 
-        <button class="is--default">
-            Double
-        </button>
+        <div>
+            <label for="simple">
+                <input id="simple" type="radio" v-model="glazing.type"/> Simple
+            </label>
+            <label for="double">
+                <input id="double" type="radio" v-model="glazing.type"/> Double
+            </label>
+        </div>
 
-        <h3>Les fenêtres ont des garde-corps : :</h3>
-        <button class="is--default">
-            Oui
-        </button>
+        <h3>Les fenêtres ont des garde-corps :</h3>
 
-        <button class="is--default">
-            Non
-        </button>
+        <div>
+            <label for="oui">
+                <input id="oui" type="radio" v-model="glazing.type"/> Oui
+            </label>
+            <label for="non">
+                <input id="non" type="radio" v-model="glazing.type"/> Non
+            </label>
+        </div>
 
         <h3>Les pièces principales possèdent elle des fenêtres :</h3>
-        <button class="is--default">
-            Oui
-        </button>
-
-        <button class="is--default">
-            Non
-        </button>
+        <div>
+            <label for="principal-oui">
+                <input id="principal-oui" type="radio" v-model="glazing.type"/> Oui
+            </label>
+            <label for="principal--non">
+                <input id="principal--non" type="radio" v-model="glazing.type"/> Non
+            </label>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name : 'glazing',
+
+        data () {
+            return {
+                glazing : {
+                    type : ''
+                }
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     .glazing {
-        min-height: 600px;
-        background-color: #13CE66;
-        padding-left: 5%;
+        padding-left: 80px;
     }
 </style>
