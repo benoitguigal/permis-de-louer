@@ -4,6 +4,10 @@
             Cartes des artisans
         </h1>
         <div class="map-container">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle is--third"></div>
+            <div class="circle is--four"></div>
             <img src="@/assets/map.png" alt="map">
             <div class="map-card">
                 <h3>Artisan 1</h3>
@@ -47,6 +51,36 @@
 
             img {
                 width: 100%;
+            }
+
+            .circle {
+                background-color: #FFC82C;
+                border-radius: 100%;
+                width: 36px;
+                height: 36px;
+                position: absolute;
+                top: 35px;
+                left: 18px;
+
+                &:first-of-type {
+                    left: 135px !important;
+                    top: 135px !important;
+                }
+
+                &:nth-child(even) {
+                    left: 435px;
+                    top: 45px;
+                }
+
+                &.is--third {
+                    left: 435px;
+                    top: 345px;
+                }
+
+                &.is--four {
+                    left: 220px;
+                    top: 305px;
+                }
             }
 
             .map-card {
