@@ -1,24 +1,79 @@
 <template>
     <div class="home">
-        <svg width="135px" height="154px" viewBox="0 0 135 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <title>Path</title>
-            <desc>Created with Sketch.</desc>
-            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <g id="logo" fill="#000000">
-                    <path d="M68.6,0.3 C67.3,-0.1 66.3,-0.1 65.5,0.3 L1.2,40.5 C0.4,41.1 0,41.9 0,42.7 L0,116.9 L61.2,116.9 C61.8,116.9 62.3,116.7 62.7,116.2 C63.1,115.8 63.3,115.3 63.3,114.7 C63.3,114.1 63.1,113.7 62.7,113.3 C62.3,112.9 61.8,112.7 61.2,112.7 L53.7,112.7 L53.7,109.5 L61.2,109.5 C61.8,109.5 62.3,109.3 62.7,108.8 C63.1,108.4 63.3,107.9 63.3,107.3 C63.3,106.7 63.1,106.3 62.7,105.9 C62.3,105.5 61.8,105.3 61.2,105.3 L53.7,105.3 L53.7,102 L61.2,102 C61.8,102 62.3,101.8 62.7,101.3 C63.1,100.9 63.3,100.4 63.3,99.8 C63.3,99.2 63.1,98.8 62.7,98.4 C62.3,98 61.8,97.8 61.2,97.8 L53.7,97.8 L53.7,94.5 L61.2,94.5 C61.8,94.5 62.3,94.3 62.7,93.8 C63.1,93.4 63.3,92.9 63.3,92.3 C63.3,91.7 63.1,91.3 62.7,90.9 C62.3,90.5 61.8,90.3 61.2,90.3 L26.6,90.3 L26.6,58.5 C26.6,57.5 27.1,56.8 28,56.3 L65.7,32.9 C66.7,32.3 67.6,32.3 68.6,32.9 L106.2,56.3 C107,56.9 107.3,57.7 107.3,58.5 L107.3,127.3 L2,127.3 C1.4,127.3 0.9,127.5 0.5,127.9 C0.2,128.3 0,128.8 0,129.4 C0,130 0.2,130.4 0.5,130.9 C0.9,131.3 1.4,131.5 2,131.5 L9.5,131.5 L9.5,134.7 L2,134.7 C1.4,134.7 0.9,134.9 0.5,135.3 C0.2,135.7 0,136.2 0,136.8 C0,137.4 0.2,137.8 0.5,138.3 C0.9,138.7 1.4,138.9 2,138.9 L9.5,138.9 L9.5,142.1 L2,142.1 C1.4,142.1 0.9,142.3 0.5,142.7 C0.2,143.1 0,143.6 0,144.2 C0,144.8 0.2,145.2 0.5,145.7 C0.9,146.1 1.4,146.3 2,146.3 L9.5,146.3 L9.5,149.5 L2,149.5 C1.4,149.5 0.9,149.7 0.5,150.1 C0.2,150.5 0,151 0,151.6 C0,152.2 0.2,152.6 0.5,153.1 C0.9,153.5 1.4,153.7 2,153.7 L134.2,153.7 L134.2,42.8 C134.2,41.7 133.8,41 132.9,40.6 L68.6,0.3 Z" id="Path"></path>
-                </g>
-            </g>
-        </svg>
-        <br>
-        <h1>
-            Permis de louer
-        </h1>
+        <div class="slide-container">
+            <div id="slide">
+
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
-        name : 'home'
+        name : 'home',
+
+        data () {
+            return {
+                links    : [
+                    'https://images.unsplash.com/photo-1532339877285-0c24490b8e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+                    'https://images.unsplash.com/photo-1477764864052-f721644f01a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+                    'https://images.unsplash.com/photo-1546552356-3fae876a61ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80',
+                    'https://images.unsplash.com/photo-1488257907837-523fe2051fc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
+                ],
+                interval : null
+            }
+        },
+
+        mounted () {
+            this.createSlide()
+        },
+
+        methods : {
+            appendImageOnLoad (link) {
+                return new Promise((resolve) => {
+                    let img = new Image()
+
+                    img.onload = () => {
+                        document.getElementById('slide').append(img)
+                        resolve()
+                    }
+
+                    img.style.width    = `${100 / this.links.length}%`
+                    img.src            = link
+                    img.style.cssFloat = 'left'
+                })
+            },
+
+            createSlide () {
+                let promises = []
+
+                for (let link of this.links) {
+                    promises.push(this.appendImageOnLoad(link))
+                }
+
+                document.getElementById('slide').style.width = `${promises.length * 100}%`
+
+                Promise.all(promises).then(() => {
+                    this.startAnimation()
+                })
+            },
+
+            startAnimation () {
+                let count     = 0
+                let left      = 0
+                this.interval = setInterval(() => {
+                    if (count === this.links.length) {
+                        left  = 0
+                        count = 0
+                    }
+
+                    document.getElementById('slide').style.left = `${left}%`
+
+                    left -= 100
+                    count++
+                }, 4000)
+            }
+        }
     }
 </script>
 
@@ -26,14 +81,34 @@
     .home {
         width: 100%;
         text-align: center;
-        padding-top: 50px;
 
         svg {
             width: 200px;
+            margin-top: 30px;
+
+            path {
+                stroke-dasharray: 20;
+            }
         }
 
         h1 {
-            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide-container {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 1000px;
+        }
+
+        #slide {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            left: 0;
+            transition: all 1s linear;
+            position: relative;
         }
     }
 </style>

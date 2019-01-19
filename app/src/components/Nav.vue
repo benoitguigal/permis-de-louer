@@ -1,8 +1,14 @@
 <template>
     <div class="nav">
-        <router-link to="/" class="home">
-            <i class="fas fa-home"></i> Accueil
+        <router-link to="/" class="nav-brand">
+            <img src="../assets/logo.svg" alt="logo">
+            Permis de louer
         </router-link>
+
+        <!--<router-link to="/" class="home">-->
+            <!--<i class="fas fa-home"></i> Accueil-->
+        <!--</router-link>-->
+
         <router-link to="/sign-in">
             Connexion
         </router-link>
@@ -16,14 +22,29 @@
 
 <style lang="scss" scoped>
     .nav {
-        height: 50px;
-        line-height: 50px;
+        height: 80px;
+        line-height: 59px;
         text-align: right;
         padding: 10px 40px;
-        border-bottom: 1px #2c3e50 solid;
+        border-bottom: 1px #4c657b solid;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 255;
+        background: #ffffff;
 
-        .home {
+        .nav-brand {
             float: left;
+            color: #2c3e50 !important;
+
+            img {
+                width: 20px;
+                position: relative;
+                top: 4px;
+                left: -4px;
+            }
         }
 
         a {
