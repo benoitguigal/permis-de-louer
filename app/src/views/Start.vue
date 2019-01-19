@@ -9,6 +9,9 @@
                 <h2>
                     Vos informations
                 </h2>
+                    <img src="../assets/glazing.svg">
+                    <p>Un garde-corps est obligatoire aux escaliers ainsi, qu'aux fênetres à plus de 80cm du sol. </p>
+
             </div>
             <div class="right-part">
                 <h2>
@@ -43,6 +46,14 @@
 
             .left-part {
                 @include flexPart();
+
+                img{
+                    width: 100px;
+                    margin-left:1em;
+                    }
+                p{
+                    margin:2em;
+                }
 
                 background: #ddd;
                 flex: 1;

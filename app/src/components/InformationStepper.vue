@@ -1,6 +1,8 @@
 <template lang="html">
     <div class="information-stepper">
-        <Glazing></Glazing>
+        <Glazing>
+                  <img src="../assets/glazing.svg">
+        </Glazing>
         <Area></Area>
     </div>
 </template>
@@ -16,8 +18,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    .information-stepper {
-
+<style lang="css" scoped>
+    .information-stepper { 
+       
     }
+
+
 </style>
