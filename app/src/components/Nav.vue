@@ -2,7 +2,7 @@
     <div class="nav">
         <router-link to="/" class="nav-brand">
             <img src="../assets/logo.svg" alt="logo">
-            Propriétaire responsable
+            Coach appart
         </router-link>
 
         <router-link to="/">
