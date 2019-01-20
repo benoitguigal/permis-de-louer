@@ -6,6 +6,7 @@ import Start from "@/views/Start"
 import Result from "@/views/Result"
 import Map from "@/views/Map"
 import Legal from "@/views/Legal"
+import Tenant from "@/views/Tenant.vue"
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ let router = new Router({
             path      : '/',
             name      : 'home',
             component : Home
+        },
+        {
+            path      : '/locataire',
+            name      : 'home',
+            component : Tenant
         },
         {
             path      : '/commencez',

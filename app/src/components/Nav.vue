@@ -5,6 +5,14 @@
             Propriétaire responsable
         </router-link>
 
+        <router-link to="/">
+            Proprietaire
+        </router-link>
+
+        <router-link to="/locataire">
+            Locataire
+        </router-link>
+
         <router-link to="/about">
             À propos
         </router-link>

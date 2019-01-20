@@ -17,16 +17,18 @@
                 </div>
                 <div class="is--last">
                     <section>
-                        <span>échange simplifié</span>
                         <span>
-                            Entre bailleur et locataire
+                            Un appartement sain
+                        </span>
+                        <span>
+                            Une relation saine
                         </span>
                     </section>
                 </div>
             </header>
 
             <button v-on:click="start()" class="is--default is--normal">
-                Inscription propriétaire
+                Inscription locataire
             </button>
 
         </div>
@@ -40,7 +42,7 @@
         data () {
             return {
                 links    : [
-                    'https://images.unsplash.com/photo-1532339877285-0c24490b8e28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
+                    'https://images.unsplash.com/photo-1537522067833-5ea8b58ea85a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1631&q=80',
                     'https://images.unsplash.com/photo-1477764864052-f721644f01a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
                     'https://images.unsplash.com/photo-1546552356-3fae876a61ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80',
                     'https://images.unsplash.com/photo-1488257907837-523fe2051fc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80'
