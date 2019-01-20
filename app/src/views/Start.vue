@@ -23,7 +23,7 @@
     </div>
 </template>
 
-<script>
+<script lang="js">
     import InformationStepper from '@/components/InformationStepper'
     import Stepper from '@/components/Stepper'
     import ReminderStore from '@/store/ReminderStore'
@@ -81,6 +81,7 @@
                 background: #f6f6f6;
                 flex: 1;
                 overflow: hidden;
+                position: relative;
             }
 
             .center-part {
