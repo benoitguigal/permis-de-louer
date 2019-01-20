@@ -2,6 +2,11 @@
     <div class="housing">
         <form>
             <div class="housing__type">
+                <b>
+                    Nature du logement
+                </b>
+                <br>
+                <br>
                 <label for="housing-type-1">
                     <input type="radio" value="appartement"
                            v-model="housing.type"
@@ -17,42 +22,63 @@
                     />
                     Maison
                 </label>
-            </div>
 
-            <div class="housing__size">
-                <label>
-                    Surface du logement (en m2)
+                <br>
+                <br>
+
+                <b>
+                    S'agit-il d'une copropriété ?
+                </b>
+
+                <br>
+                <br>
+
+                <label for="housing-cop-1">
+                    <input type="radio" value="oui"
+                           v-model="housing.cop"
+                           id="housing-cop-1"
+                    />
+                    oui
                 </label>
-                <vue-slider ref="slider" v-model="housing.surfece" :max="100"
-                            :width="200"
-                            :tooltip="'always'"
-                            tooltip-dir="bottom"
-                ></vue-slider>
+                <br>
+                <label for="housing-cop-2">
+                    <input type="radio" value="non"
+                           v-model="housing.cop"
+                           id="housing-cop-2"
+                    />
+                    non
+                </label>
+
+                <br>
+                <br>
+
+                <input type="text" placeholder="Adresse du logement" />
+                <br>
+                <input type="text" placeholder="Ville" />
+                <br>
+                <input type="text" placeholder="Code postal" />
             </div>
         </form>
     </div>
 </template>
 
 <script>
-    import vueSlider from 'vue-slider-component'
     import TitleStore from '@/store/TitleStore'
 
     export default {
         name : 'housing',
 
-        components : {vueSlider},
-
         store : TitleStore,
 
         mounted () {
-            this.$store.dispatch('changeTitle', 'Nature du logement')
+            this.$store.dispatch('changeTitle', 'Logement')
         },
 
         data () {
             return {
                 housing : {
                     type    : '',
-                    surface : 5
+                    cop : ''
                 }
             }
         },
@@ -68,6 +94,10 @@
         span {
             margin-bottom: 6px;
             display: inline-block;
+        }
+
+        input[type="text"] {
+            margin-bottom: 7px;
         }
 
         &__type {

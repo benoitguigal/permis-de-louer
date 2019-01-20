@@ -1,5 +1,9 @@
 <template lang="html">
     <div class="template-reminder">
+
+        <input type="text" placeholder="Nom" />
+        <input type="text" placeholder="Prénom" />
+        <input type="text" placeholder="Téléphone" />
         <span>
             Les données récoltées ne <br>
             font l'objet d'aucun <br>
@@ -9,18 +13,6 @@
         <router-link to="/conditions-legales" target="_blank">
             Voir les conditions légales
         </router-link>
-
-        <br>
-
-        <i class="fas fa-cube"></i>
-
-        <span>
-            Surface légale <9m2
-            <br>
-            Hauteur de plafond <2,20m
-            <br>
-            Volume <20m3
-        </span>
     </div>
 </template>
 
@@ -38,15 +30,13 @@
             display: block;
         }
 
-        a {
+        input {
+            margin-bottom: 7px;
             margin-left: 22px;
         }
 
-        i.fa-cube {
-            font-size: 45px;
-            margin-top: 100px;
-            margin-bottom: 0;
-            margin-left: 25px;
+        a {
+            margin-left: 22px;
         }
     }
 </style>
