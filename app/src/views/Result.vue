@@ -1,46 +1,85 @@
 <template lang="html">
     <div class="result">
-        <div class="left-part">
-            <div class="result__score">
-                score :
-                <span>{{ score }}%</span>
-            </div>
-            <div class="result__details">
-                <div>
-                    <h2>
-                        Éléments critiques
-                    </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <br>
-                        Sed tincidunt congue ligula in rutrum. Morbi nec lacus
-                        <br>
-                        condimentum, hendrerit mi eu, feugiat.
-                    </p>
-                </div>
-                <div>
-                    <h2>
-                        Optionnels
-                    </h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        <br>
-                        Sed tincidunt congue ligula in rutrum. Morbi nec lacus
-                        <br>
-                        condimentum, hendrerit mi eu, feugiat.
-                    </p>
+        <div class="result__score">
+            <h1>
+                Votre score
+            </h1>
+            <Score></Score>
+        </div>
 
+        <div class="wrapper">
+            <div class="left-part">
+                <div class="result__details">
+                    <div>
+                        <h2>
+                            Éléments critiques
+                        </h2>
+                        <p>
+                            <b class="is--underline">
+                                Surface non conforme
+                            </b>
+                            <br>
+                            Un aménagement est à prévoir. Attention à la démolition d'une
+                            <br/>
+                            cloison : ce travail ne peut être effectué seul, il necéssite
+                            <br/>
+                            l'intervention d'un expert. Sa fonction est
+                            <br/>
+                            essentielle pour maintenir la charpente et les planchers.
+                            <br/>
+                            Cette tâche nécessite des autorisations.
+                        </p>
+                        <p>
+                            <b>
+                                Un dossier avec les devis de l'entreprise de maçonnerie, de
+                                <br/>
+                                l'architecte de l'immeuble et du
+                                <br/>
+                                BET (Bureau d'Etudes Techniques)
+                            </b>
+                        </p>
+                    </div>
+                    <div>
+                        <h2>
+                            Optionnels
+                        </h2>
+                        <p>
+                            <b class="is--underline">
+                                Fuite d'eau à un robinet
+                            </b>
+                            <br>
+
+                            Un joint de robinet usé cause une augmentation des charges lié
+                            <br/>
+                            à la consomation d'eau. A terme la fuite peut déteriorer le
+                            <br/>
+                            matériel autour (évier, meuble...).
+                        </p>
+
+                        <p>
+                            <b class="is--underline">Simple vitrage</b>
+                            <br/>
+                            Le simple vitrage certe éconimique à l'achat, est un très mauvais
+                            <br/>
+                            isolant thermique. Pour procéder au remplacement d’un vitrage
+                            <br/>
+                            adapté à la fenêtre, le vitrier va se déplacer pour faire un constat
+                            <br/>
+                            de l’environnement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <div class="download-details">
+                    Télécharger le pdf
+                    <br>
+                    <button class="is--normal is--default">pdf</button>
+                    <br>
                     <div class="next">
                         <NextStep :content="'Carte des artisans'" v-on:click="showMap()"></NextStep>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="right-part">
-            <div class="download-details">
-                Télécharger le pdf
-                <br>
-                <button class="is--normal is--default">pdf</button>
             </div>
         </div>
     </div>
@@ -48,11 +87,12 @@
 
 <script>
     import NextStep from '@/components/NextStep.vue'
+    import Score from '@/components/Score.vue'
 
     export default {
         name : 'result',
 
-        components : {NextStep},
+        components : {NextStep, Score},
 
         data () {
             return {
@@ -70,51 +110,52 @@
 
 <style lang="scss" scoped>
     .result {
-        padding-left: 130px;
         padding-top: 50px;
 
+        .wrapper {
+            display: flex;
+            padding-left: 100px;
+        }
 
-        display: flex;
+        .next {
+            text-align: left;
+            display: inline-block;
+            margin-top: 15px;
+        }
 
         .left-part {
             flex: 1;
         }
 
         .right-part {
-            flex: 0 0 200px;
+            flex: 0 0 250px;
             padding-top: 100px;
         }
 
         &__score {
-            width: 420px;
-            height: 100px;
-            font-size: 50px;
-            text-align: left;
-            line-height: 100px;
-            padding: 0;
+            text-align: center;
+            margin-bottom: 30px;
 
-            span {
-                float: right;
-                font-size: 70px;
+            h1 {
+                margin-top: 0;
             }
         }
 
         &__details {
             width: 100%;
 
-            & > div {
-                position: relative;
-
-                .next {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    margin-top: 0;
-                }
+            div {
+                padding-bottom: 10px;
             }
 
-            p:first-of-type {
-                margin-bottom: 140px;
+            p {
+                b {
+                    display: block;
+
+                    &.is--underline {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
 

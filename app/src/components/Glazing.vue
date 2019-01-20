@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="glazing">
         <h2>
-            Fenêtres
+            Vitrage
         </h2>
 
         <h3>Le vitrage est :</h3>

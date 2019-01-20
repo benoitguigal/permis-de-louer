@@ -1,7 +1,16 @@
 <template lang="html">
     <div class="glazing-reminder">
+        <h3>
+            Garde-corps
+        </h3>
         <img src="@/assets/glazing.svg">
-        <p>Un garde-corps est obligatoire aux escaliers ainsi, qu'aux fênetres à plus de 80cm du sol. </p>
+        <p>
+            Pour toutes fenêtre
+            <br>
+            à plus de 80cm du sol, <br>
+            le garde-corps<br>
+            est obligatoire
+        </p>
     </div>
 </template>
 

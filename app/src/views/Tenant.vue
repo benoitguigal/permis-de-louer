@@ -90,19 +90,19 @@
             },
 
             startAnimation () {
-                let count = 0
-                let left  = 0
-                this.interval = setInterval(() => {
-                    if (count === this.links.length) {
-                        left  = 0
-                        count = 0
-                    }
-
-                    document.getElementById('slide').style.left = `${left}%`
-
-                    left -= 100
-                    count++
-                }, 4000)
+                // let count = 0
+                // let left  = 0
+                // this.interval = setInterval(() => {
+                //     if (count === this.links.length) {
+                //         left  = 0
+                //         count = 0
+                //     }
+                //
+                //     document.getElementById('slide').style.left = `${left}%`
+                //
+                //     left -= 100
+                //     count++
+                // }, 4000)
             }
         }
     }
