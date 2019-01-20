@@ -13,17 +13,10 @@
             </div>
             <header>
                 <div class="is--first">
-                    Diagnostic appartement
+                    Un appartement sain
                 </div>
                 <div class="is--last">
-                    <section>
-                        <span>
-                            Un appartement sain
-                        </span>
-                        <span>
-                            Une relation saine
-                        </span>
-                    </section>
+                    Une relation saine
                 </div>
             </header>
 
@@ -133,7 +126,7 @@
                 height: 60px;
                 margin-left: 2px;
                 margin-right: 2px;
-
+                line-height: 60px;
 
                 span {
                     display: block;
@@ -142,19 +135,14 @@
                 &.is--first {
                     text-align: right;
                     border-bottom: 8px rgb(142, 207, 101) solid;
-                    line-height: 60px;
+
                     padding-right: 15px;
                 }
 
                 &.is--last {
                     text-align: left;
                     padding-left: 15px;
-                    align-items: center;
                     border-bottom: 8px rgb(249, 209, 144) solid;
-
-                    section {
-                        display: inline-block;
-                    }
                 }
             }
         }
