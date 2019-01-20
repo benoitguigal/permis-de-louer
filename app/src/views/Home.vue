@@ -3,9 +3,7 @@
         <div class="slide-container">
             <div class="slide__header">
                 <h1>
-                    Plateforme de mise en relation
-                    <br/>
-                    Propriétaire-Locataire
+                    Accompagnement des  <br/> propriétaires bailleurs
                 </h1>
             </div>
             <div id="slide">
