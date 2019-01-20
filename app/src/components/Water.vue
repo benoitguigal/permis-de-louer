@@ -1,14 +1,10 @@
 <template lang="html">
     <div class="water">
         <form>
-            <h2>
-                Nature des fuites
-            </h2>
-
             <section>
-            <span>
-                évacuation (eau usées)
-            </span>
+                <span>
+                    évacuation (eau usées)
+                </span>
                 <br>
                 <select v-model="water.evacutation">
                     <option value="Toilettes">Toilettes</option>
@@ -17,7 +13,7 @@
                     <option value="Machine à laver">Machine à laver</option>
                 </select>
             </section>
-            <hr>
+
             <section>
             <span>
                 Adduction (eau potable)
@@ -35,8 +31,12 @@
 </template>
 
 <script>
+    import TitleStore from '@/store/TitleStore'
+
     export default {
         name : 'water',
+
+        store : TitleStore,
 
         data () {
             return {
@@ -45,6 +45,10 @@
                 }
             }
         },
+
+        mounted () {
+            this.$store.dispatch('changeTitle', 'Nature des fuites')
+        }
     }
 </script>
 
@@ -55,6 +59,7 @@
             padding-left: 80px;
 
             section {
+                margin-bottom: 15px;
                 span {
                     display: block;
                 }

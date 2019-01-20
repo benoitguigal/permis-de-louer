@@ -5,11 +5,9 @@
         </h3>
         <img src="@/assets/glazing.svg">
         <p>
-            Pour toutes fenêtre
+            Pour toutes fenêtre  à plus de 80cm
             <br>
-            à plus de 80cm du sol, <br>
-            le garde-corps<br>
-            est obligatoire
+            du sol, le garde-corps est obligatoire
         </p>
     </div>
 </template>
@@ -25,6 +23,10 @@
         img {
             width: 100px;
             margin-left: 1em;
+        }
+
+        h3 {
+            margin-left: 2em;
         }
 
         p {

@@ -1,5 +1,6 @@
 <template lang="html">
     <div class="information-stepper">
+
         <component v-bind:is="currentStepComponent"></component>
         <div class="next">
             <NextStep></NextStep>

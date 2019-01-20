@@ -1,12 +1,6 @@
 <template lang="html">
     <div class="housing">
         <form>
-            <h2>
-                Nature du logement
-            </h2>
-
-            <br>
-
             <div class="housing__type">
                 <label for="housing-type-1">
                     <input type="radio" value="appartement"
@@ -15,6 +9,7 @@
                     />
                     Appartement
                 </label>
+                <br>
                 <label for="housing-type-2">
                     <input type="radio" value="maison"
                            v-model="housing.type"
@@ -23,8 +18,6 @@
                     Maison
                 </label>
             </div>
-
-            <br>
 
             <div class="housing__size">
                 <label>
@@ -42,11 +35,18 @@
 
 <script>
     import vueSlider from 'vue-slider-component'
+    import TitleStore from '@/store/TitleStore'
 
     export default {
         name : 'housing',
 
         components : {vueSlider},
+
+        store : TitleStore,
+
+        mounted () {
+            this.$store.dispatch('changeTitle', 'Nature du logement')
+        },
 
         data () {
             return {
@@ -74,10 +74,16 @@
             margin-bottom: 35px;
 
             label {
-                width: 128px;
+                width: 120px;
                 display: inline-block;
                 cursor: pointer;
                 margin-right: 72px;
+
+                input {
+                    position: relative;
+                    top: -2px;
+                    margin-right: 4px;
+                }
             }
         }
     }

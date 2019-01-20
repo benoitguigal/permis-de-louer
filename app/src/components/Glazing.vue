@@ -1,9 +1,5 @@
 <template lang="html">
     <div class="glazing">
-        <h2>
-            Vitrage
-        </h2>
-
         <h3>Le vitrage est :</h3>
 
         <div>
@@ -39,8 +35,12 @@
 </template>
 
 <script>
+    import TitleStore from '@/store/TitleStore'
+
     export default {
         name : 'glazing',
+
+        store : TitleStore,
 
         data () {
             return {
@@ -48,6 +48,10 @@
                     type : ''
                 }
             }
+        },
+
+        mounted () {
+            this.$store.dispatch('changeTitle', 'Vitrage')
         }
     }
 </script>

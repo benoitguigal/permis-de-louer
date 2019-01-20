@@ -3,6 +3,7 @@
         <i v-for="(index) in range" class="far fa-circle"
            v-bind:data-number="index"
            v-bind:class="{'is--active' : index === step}"
+           v-bind:style="{'visibility' : index > 4 ? 'hidden' : 'visible'}"
         ></i>
         <div class="line"></div>
     </div>

@@ -1,9 +1,8 @@
 <template lang="html">
     <div class="start">
         <h1>
-            Le diagnotic
+            {{ title }}
         </h1>
-
         <div class="content">
             <div class="left-part">
                 <h2>
@@ -28,6 +27,7 @@
     import Stepper from '@/components/Stepper'
     import ReminderStore from '@/store/ReminderStore'
     import WizardStore from '@/store/WizardStore'
+    import TitleStore from '@/store/TitleStore'
 
     export default {
         name : 'start',
@@ -53,6 +53,9 @@
         computed : {
             currentReminder () {
                 return this.$store.state.currentReminder
+            },
+            title () {
+                return TitleStore.state.title
             }
         }
     }
@@ -71,6 +74,11 @@
         height: 100%;
         overflow: hidden;
 
+        h1 {
+            text-align: left;
+            padding-left: 350px;
+        }
+
         .content {
             display: flex;
             height: 100%;
@@ -79,7 +87,7 @@
                 @include flexPart();
 
                 background: #f6f6f6;
-                flex: 1;
+                flex: 0 0 350px;
                 overflow: hidden;
                 position: relative;
             }
@@ -87,10 +95,10 @@
             .center-part {
                 @include flexPart();
 
-                /*background: #eeeeee;*/
-                flex: 2;
+                flex: 1;
                 height: 98%;
                 overflow: scroll;
+                padding-top: 20px;
             }
 
             .right-part {

@@ -57,7 +57,7 @@
 
         methods : {
             start () {
-                this.$router.push({name : 'start'})
+
             },
 
             appendImageOnLoad (link) {
